@@ -19,6 +19,19 @@
                                 @endif
                             </div>
                         </div>
+                        <!--have_button-->
+                        <div class="panel-body">
+                            @if ($item->id)
+                                <p class="item-title"><a href="{{ route('items.show', $item->id) }}">{{ $item->name }}</a></p>
+                            @else
+                                <p class="item-title">{{ $item->name }}</p>
+                            @endif
+                            <div class="buttons text-center">
+                                @if (Auth::check())
+                                    @include('items.have_button', ['item' => $item])
+                                @endif
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
