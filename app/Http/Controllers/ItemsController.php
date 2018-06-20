@@ -40,9 +40,4 @@ class ItemsController extends Controller
             'items' => $items,
         ]);
     }
-    
-        function undefined_null($array, $key){
-      $return = isset($array[$key])? $array[$key] : NULL;
-      return $return;
-    }
   }
