@@ -26,7 +26,7 @@ class ItemsController extends Controller
 
             // Creating "Item" instance to make it easy to handle.（not saving）
             foreach ($rws_response->getData()['Items'] as $rws_item) {
-                $item = new \App\Item();
+                $item = new Item();
                 $item->code = $rws_item['Item']['itemCode'];
                 $item->name = $rws_item['Item']['itemName'];
                 $item->url = $rws_item['Item']['itemUrl'];
@@ -39,5 +39,10 @@ class ItemsController extends Controller
             'keyword' => $keyword,
             'items' => $items,
         ]);
+    }
+    
+        function undefined_null($array, $key){
+      $return = isset($array[$key])? $array[$key] : NULL;
+      return $return;
     }
   }
